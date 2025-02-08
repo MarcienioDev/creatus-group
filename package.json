@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/poppins": "^5.1.1",
     "creatus-group": "file:",
     "next": "15.1.6",
     "react": "^19.0.0",
