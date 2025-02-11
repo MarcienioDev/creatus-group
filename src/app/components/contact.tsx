@@ -1,5 +1,7 @@
 export default function Contact(){
     return(
-        <h1>teste 2</h1>
+        <section className="flex items-center font-poppins justify-center">
+            <h1>Contato</h1>
+        </section>
     )
 }
