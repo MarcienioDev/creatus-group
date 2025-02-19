@@ -1,6 +1,6 @@
-export default function About() {
+export default function About({ id }: { id?: string }) {
     return (
-        <section className="font-poppins flex flex-row p-24 bg-blue-800 text-white ">
+        <section id={id} className="font-poppins flex flex-row p-24 bg-blue-800 text-white ">
             <div className="w-full">
                 <h1 className="mb-5 text-3xl font-semibold">QUEM SOMOS?</h1>
                 <p>Na Creatus Group, acreditamos que o sucesso de uma marca é construído sobre bases sólidas. Nossa abordagem é guiada por princípios conservadores que valorizam a disciplina, a clareza e o compromisso com resultados tangíveis. Enxergamos o marketing não como um jogo de modismos passageiros, mas como uma estratégia bem estruturada que respeita a história, a identidade e o propósito de cada cliente.
