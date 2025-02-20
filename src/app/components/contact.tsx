@@ -1,13 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact({ id }: { id?: string }) {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Aqui você pode adicionar o código para enviar os dados, por exemplo, para uma API
+    console.log(formData);
+  };
+
   return (
     <div id={id} className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="bg-white shadow-xl rounded-lg p-6 max-w-md w-full">
         <h1 className="text-2xl font-bold text-center text-gray-800 mb-4">
           Entre em Contato
         </h1>
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label
               htmlFor="name"
@@ -19,6 +39,8 @@ export default function Contact({ id }: { id?: string }) {
               type="text"
               id="name"
               name="name"
+              value={formData.name}
+              onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Nome da sua empresa"
               required
@@ -35,6 +57,8 @@ export default function Contact({ id }: { id?: string }) {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="seuemail@exemplo.com"
               required
@@ -50,7 +74,9 @@ export default function Contact({ id }: { id?: string }) {
             <textarea
               id="message"
               name="message"
-              rows="4"
+              value={formData.message}
+              onChange={handleChange}
+              rows={4} // Usando rows para definir o tamanho do campo
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Digite sua mensagem aqui"
               required
