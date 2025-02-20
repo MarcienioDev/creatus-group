@@ -3,7 +3,11 @@ import React, { useState } from "react";
 export default function Contact({ id }: { id?: string }) {
   const [formData, setFormData] = useState({
     name: "",
-    email: "",
+    companyName: "",
+    corporateEmail: "",
+    phone: "",
+    revenue: "",
+    segment: "",
     message: "",
   });
 
@@ -33,7 +37,7 @@ export default function Contact({ id }: { id?: string }) {
               htmlFor="name"
               className="block text-sm font-medium text-gray-700"
             >
-              Nome da sua empresa
+              Nome
             </label>
             <input
               type="text"
@@ -42,26 +46,96 @@ export default function Contact({ id }: { id?: string }) {
               value={formData.name}
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Seu nome completo"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="companyName"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Nome da Empresa
+            </label>
+            <input
+              type="text"
+              id="companyName"
+              name="companyName"
+              value={formData.companyName}
+              onChange={handleChange}
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Nome da sua empresa"
               required
             />
           </div>
           <div>
             <label
-              htmlFor="email"
+              htmlFor="corporateEmail"
               className="block text-sm font-medium text-gray-700"
             >
-              E-mail
+              E-mail Corporativo
             </label>
             <input
               type="email"
-              id="email"
-              name="email"
-              value={formData.email}
+              id="corporateEmail"
+              name="corporateEmail"
+              value={formData.corporateEmail}
               onChange={handleChange}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
-              placeholder="seuemail@exemplo.com"
+              placeholder="seuemail@empresa.com"
               required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="phone"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Telefone
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="(DDD) 1234-5678"
+              required
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="revenue"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Faturamento
+            </label>
+            <input
+              type="text"
+              id="revenue"
+              name="revenue"
+              value={formData.revenue}
+              onChange={handleChange}
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Faturamento estimado"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="segment"
+              className="block text-sm font-medium text-gray-700"
+            >
+              Segmento
+            </label>
+            <input
+              type="text"
+              id="segment"
+              name="segment"
+              value={formData.segment}
+              onChange={handleChange}
+              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              placeholder="Segmento de atuação"
             />
           </div>
           <div>
@@ -76,7 +150,7 @@ export default function Contact({ id }: { id?: string }) {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              rows={4} // Usando rows para definir o tamanho do campo
+              rows={4}
               className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               placeholder="Digite sua mensagem aqui"
               required
@@ -93,3 +167,4 @@ export default function Contact({ id }: { id?: string }) {
     </div>
   );
 }
+
