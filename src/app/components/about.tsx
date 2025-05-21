@@ -1,41 +1,39 @@
+import Image from "next/image";
+
 export default function About({ id }: { id?: string }) {
-    return (
-        <section id={id} className="font-poppins flex flex-row p-24 bg-blue-800 text-white ">
-            <div className="w-full">
-                <h1 className="mb-5 text-3xl font-semibold">QUEM SOMOS?</h1>
-                <p>Na Creatus Group, acreditamos que o sucesso de uma marca é construído sobre bases sólidas. Nossa abordagem é guiada por princípios conservadores que valorizam a disciplina, a clareza e o compromisso com resultados tangíveis. Enxergamos o marketing não como um jogo de modismos passageiros, mas como uma estratégia bem estruturada que respeita a história, a identidade e o propósito de cada cliente.
-Observamos o mercado com um olhar atento e analítico, identificando oportunidades com precisão e desenvolvendo soluções inteligentes. Trabalhamos para transformar visão em ação, com técnicas que se mantêm eficazes ao longo do tempo.
-Se você busca uma agência que prioriza a consistência, a eficiência e o crescimento sustentável, a Creatus Group está pronta para ser sua parceira estratégica.</p>
-            </div>
-            <div className="flex flex-col justify-between ml-16 w-full text-sm">
-                <div className="flex flex-row items-center text-lg">
-                    <div>
-                        <p className="text-5xl font-semibold">+15</p>
-                        <p>Estados</p>
-                    </div>  
-                    <div>
-                        <p className="ml-4">Atuamos em cada lugar conhecendo a sua realidade e entendendo a necessidade de cada parceiro. Somos uma agência de marketing digital que atua de forma personalizada.</p>
-                    </div>
-                </div>
-                <div className="flex flex-row items-center text-lg">
-                    <div>
-                        <p className="text-5xl font-semibold">+90</p>
-                        <p>Projetos</p>
-                    </div>
-                    <div>
-                        <p className="ml-4">Trabalhamos com uma variedade de projetos, desde landing pages e sites completos, atendendo a todas as necessidades da sua empresa.</p>
-                    </div>
-                </div>
-                <div className="flex flex-row items-center text-lg">
-                    <div>
-                    <p className="text-5xl font-semibold">+120</p>
-                    <p>Clientes</p>
-                    </div>
-                    <div>
-                        <p className="ml-4">Trabalhamos com uma variedade de projetos, desde landing pages e sites completos, atendendo a todas as necessidades da sua empresa.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    )
+  return (
+    <section
+      id={id}
+      className="font-poppins flex flex-col md:flex-row p-6 md:p-12 lg:p-20 bg-secondary text-white gap-8 md:gap-16"
+    >
+      <div className="w-full mt-4 md:mt-6">
+        <h1 className="mb-4 md:mb-6 text-2xl md:text-3xl font-sports">
+          QUEM SOMOS?
+        </h1>
+        <p className="leading-relaxed text-sm md:text-base">
+          Na Hagbyte, a gente acredita que tecnologia boa é aquela que facilita sua vida —
+          seja com um site que impressiona ou com um sistema que faz o trabalho chato sozinho.
+          <br /><br />
+          Somos uma empresa jovem, mas com fome de código e sede de inovação.
+          Trabalhamos com desenvolvimento web responsivo, moderno e funcional, e também criamos soluções de automação pra deixar sua rotina mais leve (e produtiva!).
+          <br /><br />
+          Aqui, cada projeto é único. Escutamos, planejamos e entregamos com carinho, atenção e um toque de criatividade que faz a diferença.
+          Nosso compromisso é entregar resultados que fazem sentido pro seu negócio — com agilidade, transparência e qualidade.
+          <br /><br />
+          Se você quer tirar uma ideia do papel ou melhorar o que já tem, cola com a gente.
+          Bora transformar tecnologia em solução de verdade!
+        </p>
+      </div>
+
+      <div className="w-full md:w-1/3">
+        <Image
+          src="/img/img-7.jpg"
+          width={400}
+          height={400}
+          alt="HAGBYTE STUDIOS"
+          className="rounded-lg w-full h-auto object-cover"
+        />
+      </div>
+    </section>
+  );
 }

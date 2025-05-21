@@ -1,106 +1,68 @@
-import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "./card";
-import { FaPencilAlt, FaUserCog, FaRocket, FaLightbulb } from "react-icons/fa";
-import { Button } from "./button";
+import { Card, CardHeader, CardTitle, CardContent } from "./card";
+import { DiCode } from "react-icons/di";
+import { AiOutlineRobot } from "react-icons/ai";
 
 export default function Services({ id }: { id?: string }) {
   return (
-    <section id={id} className="p-24 flex justify-center flex-col gap-16 font-poppins">
+    <section
+      id={id}
+      className="px-4 py-12 md:py-16 md:px-12 lg:px-24 flex justify-center flex-col gap-10 md:gap-16 font-poppins"
+    >
       <div>
-        <h1 className="font-poppins text-blue-950 font-semibold text-2xl flex justify-center">
+        <h1 className="font-sports text-secondary text-xl md:text-2xl flex justify-center text-center">
           CONHEÇA OS NOSSOS SERVIÇOS
         </h1>
       </div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 xl:gap-6">
-        <Card className="shadow-lg hover:scale-105">
+
+      <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 lg:gap-10">
+        {/* Card Desenvolvimento Web */}
+        <Card className="shadow-lg hover:scale-105 transition-transform w-full md:w-64">
           <CardHeader>
             <div className="flex justify-center items-center mb-4">
-              <FaRocket className="w-20 h-20 text-blue-800" />
+              <DiCode className="w-16 h-16 md:w-20 md:h-20 text-secondary" />
             </div>
-            <CardTitle className="text-blue-800 font-semibold text-2xl">Tráfego Pago</CardTitle>
-            <CardDescription>Gestão de seus anúncios online.</CardDescription>
+            <CardTitle className="text-secondary font-poppins tracking-wide text-center">
+              Desenvolvimento Web
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="text-sm">
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Resultados rápidos</b> – Acelera o crescimento e gera conversões em pouco tempo.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Público segmentado</b> – Anúncios alcançam exatamente quem tem interesse no produto.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Escalabilidade</b> – Permite aumentar vendas e alcance conforme o investimento cresce.
-              </li>
-            </ul>
+            <p className="text-gray-600 text-sm text-center">
+              Tá precisando de um site bonito, rápido e que funcione em qualquer tela? <br />
+              A gente cuida disso pra <b>VOCÊ</b>! <br />
+              Do layout ao código, tudo feito com capricho e tecnologia de ponta. <br />
+              Seu site com a sua cara, do jeitinho que o seu negócio merece.
+            </p>
           </CardContent>
         </Card>
-        <Card className="shadow-lg hover:scale-105">
+
+        {/* Card Automação */}
+        <Card className="shadow-lg hover:scale-105 transition-transform w-full md:w-64">
           <CardHeader>
             <div className="flex justify-center items-center mb-4">
-              <FaPencilAlt className="w-20 h-20 text-blue-800" />
+              <AiOutlineRobot className="w-16 h-16 md:w-20 md:h-20 text-secondary" />
             </div>
-            <CardTitle className="text-blue-800 font-semibold text-2xl">Criativos</CardTitle>
-            <CardDescription>Artes personalizadas que engajam e geram resultados reais.</CardDescription>
+            <CardTitle className="text-secondary font-poppins tracking-wide text-center">
+              Automação de Processos
+            </CardTitle>
           </CardHeader>
           <CardContent>
-            <ul className="text-sm">
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Impacto visual</b> – Designs estratégicos que capturam atenção e engajam público-alvo.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Identidade forte</b> – Criativos personalizados para destacar sua marca no digital.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Escalabilidade</b> – Artes otimizadas que aumentam cliques, interações e vendas.
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-        <Card className="shadow-lg hover:scale-105">
-          <CardHeader>
-            <div className="flex justify-center items-center mb-4">
-              <FaUserCog className="w-20 h-20 text-blue-800" />
-            </div>
-            <CardTitle className="text-blue-800 font-semibold text-2xl">CRM</CardTitle>
-            <CardDescription>Gerencie o relacionamento com seu cliente em um só lugar.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="text-sm">
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Gestão de clientes</b> – Organize, acompanhe e fortaleça o relacionamento com seu público.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Automação inteligente</b> – Otimize processos e ganhe eficiência com fluxos automatizados.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Análises estratégicas</b> – Tenha insights valiosos para tomar decisões mais assertivas.
-              </li>
-            </ul>
-          </CardContent>
-        </Card>
-        <Card className="shadow-lg hover:scale-105">
-          <CardHeader>
-            <div className="flex justify-center items-center mb-4">
-              <FaLightbulb className="w-20 h-20 text-blue-800" />
-            </div>
-            <CardTitle className="text-blue-800 font-semibold text-2xl">Soluções Comerciais</CardTitle>
-            <CardDescription>Seu marketing gerenciado por profissionais.</CardDescription>
-          </CardHeader>
-          <CardContent>
-            <ul className="text-sm">
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Estratégias eficientes</b> – Soluções personalizadas para impulsionar vendas e crescimento.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Otimização de processos</b> – Automatize e simplifique tarefas para mais produtividade.
-              </li>
-              <li className="w-full text-gray-500">
-                <b className="text-gray-600">Resultados escaláveis</b> – Expanda seu negócio com estratégias focadas em performance.
-              </li>
-            </ul>
+            <p className="text-gray-600 text-sm text-center">
+              Sabe aquelas tarefas repetitivas que só tomam tempo? <br />
+              A gente automatiza tudo isso pra <b>VOCÊ</b>! <br />
+              Mais agilidade, menos erro e mais tempo pro que realmente importa. <br />
+              Deixa que os sistemas trabalham por você, simples assim!
+            </p>
           </CardContent>
         </Card>
       </div>
-      <Button className="self-center w-1/3 h-12 text-lg">Contratar Agora</Button>
+
+      <a
+        href="#Contact"
+        className="self-center w-full md:w-1/3 h-12 text-base md:text-lg font-sports bg-secondary text-white flex justify-center items-center rounded-lg hover:bg-white hover:text-secondary hover:border-secondary hover:border-2 transition-colors"
+      >
+        Entre em contato
+      </a>
     </section>
   );
 }
+
